@@ -1,6 +1,6 @@
 FROM gradle:jdk11
 
-ADD z3 cvc3 cvc4 /usr/bin
+ADD z3 cvc3 cvc4 /usr/bin/
 
 RUN set -o errexit -o nounset \
     && apt-get  update -y \
