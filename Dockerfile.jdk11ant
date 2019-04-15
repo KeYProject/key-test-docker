@@ -1,0 +1,12 @@
+FROM openjdk:11
+ADD yices  yices-sat  yices-smt  yices-smt2 z3 cvc3 cvc4 /usr/bin/
+ADD install.sh .
+
+RUN set -o errexit -o nounset \
+    && apt-get update -y \
+    && apt-get install -y findutils git wget curl python-requests unzip zip
+
+RUN bash install.sh
+
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+ENV PATH="${PATH}:~/.sdkman/candidates/ant/current/bin/"
