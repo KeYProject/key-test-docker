@@ -4,7 +4,7 @@ ADD yices yices-sat yices-smt yices-smt2 z3 cvc3 cvc4 /usr/bin/
 
 RUN set -o errexit -o nounset \
     && apt-get update -y \
-    && apt-get install -y findutils git wget curl python3-requests unzip zip java-11-openjdk-devel gradle
+    && apt-get install -y findutils git wget curl python3-requests unzip zip java-1.8.0-openjdk-devel gradle
 
 RUN set -o errexit -o nounset \
         && echo "Testing Gradle installation" \
