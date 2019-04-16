@@ -7,9 +7,14 @@ RUN set -o errexit -o nounset \
     && apt-get update -y \
     && apt-get install -y findutils git wget curl python3-requests unzip zip
 
-RUN install.sh
+RUN bash install.sh
+
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+ENV PATH="${PATH}:~/.sdkman/candidates/ant/current/bin/:~/.sdkman/candidates/gradle/current/bin/"
+
 
 RUN set -o errexit -o nounset \
         && echo "Testing Gradle installation" \
         && java -version \
-        && gradle --version
+        && $HOME/.sdkman/candidates/ant/current/bin/ant -version \
+        && $HOME/.sdkman/candidates/gradle/current/bin/gradle --version
