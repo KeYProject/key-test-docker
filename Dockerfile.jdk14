@@ -1,4 +1,4 @@
-FROM openjdk:14
+FROM openjdk:14-buster
 
 ADD install.sh .
 ADD yices yices-sat yices-smt yices-smt2 z3 cvc3 cvc4 /usr/bin/
@@ -9,11 +9,13 @@ RUN set -o errexit -o nounset \
 
 RUN bash install.sh
 
-ENV JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64/
-ENV PATH="${PATH}:~/.sdkman/candidates/ant/current/bin/:~/.sdkman/candidates/gradle/current/bin/"
+ENV JAVA_HOME=/usr/java/openjdk-14/
+ENV PATH="${PATH}:${JAVA_HOME}/bin/:/root/.sdkman/candidates/ant/current/bin/:/root/.sdkman/candidates/gradle/current/bin/"
+
+RUN echo ${PATH}
+RUN ${HOME}/.sdkman/candidates/ant/current/bin/ant -version
 
 RUN set -o errexit -o nounset \
-        && echo "Testing Gradle installation" \
-        && java -version \
-        && $HOME/.sdkman/candidates/ant/current/bin/ant -version \
-        && $HOME/.sdkman/candidates/gradle/current/bin/gradle --version
+        && java -version\
+        && ant -version \
+        && gradle --version
