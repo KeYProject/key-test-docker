@@ -9,8 +9,7 @@ RUN set -o errexit -o nounset \
 
 RUN bash install.sh
 
-
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
+ENV JAVA_HOME=/usr/local/openjdk-8/
 ENV PATH="${PATH}:~/.sdkman/candidates/ant/current/bin/:~/.sdkman/candidates/gradle/current/bin/"
 
 RUN set -o errexit -o nounset \
