@@ -1,12 +1,14 @@
 FROM openjdk:8
 
-ADD install.sh .
-ADD yices yices-sat yices-smt yices-smt2 z3 cvc3 cvc4 /usr/bin/
+ADD mathsat  princess princess-all.jar vampire  yices  yices-sat  yices-smt  yices-smt2  z3 cvc4 showSMTVersions /usr/bin/
+
+RUN showSMTVersions
 
 RUN set -o errexit -o nounset \
     && apt-get update -y \
     && apt-get install -y findutils git wget curl python3-requests unzip zip libgomp1
 
+ADD install.sh .
 RUN bash install.sh
 
 ENV JAVA_HOME=/usr/local/openjdk-8/

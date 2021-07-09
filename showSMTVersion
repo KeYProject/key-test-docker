@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+cvc4 --version 
+mathsat -version 
+princess --version
+vampire --version
+yices-smt2 --version
+z3 -version
