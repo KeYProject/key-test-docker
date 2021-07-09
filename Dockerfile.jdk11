@@ -5,7 +5,7 @@ ENV PATH="${PATH}:~/.sdkman/candidates/ant/current/bin/:~/.sdkman/candidates/gra
 
 ADD mathsat  princess princess-all.jar vampire  yices  yices-sat  yices-smt  yices-smt2  z3 cvc4 showSMTVersions /usr/bin/
 
-RUN showSMTVersions
+RUN bash showSMTVersions
 
 RUN set -o errexit -o nounset \
     && apt-get update -y \
