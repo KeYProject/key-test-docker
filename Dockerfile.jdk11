@@ -19,5 +19,4 @@ RUN java -version && which  java
 RUN set -o errexit -o nounset \
         && echo "Testing Gradle installation" \
         && java -version \
-        && $HOME/.sdkman/candidates/ant/current/bin/ant -version \
         && $HOME/.sdkman/candidates/gradle/current/bin/gradle --version
