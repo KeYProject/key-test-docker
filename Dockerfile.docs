@@ -1,6 +1,7 @@
 FROM python
 
-RUN pip install  mkdocs  mkdocs-material  pymdown-extensions pygments markdown-blockdiag markdown-aafigure
+RUN pip install mkdocs  mkdocs-material  pymdown-extensions pygments markdown-blockdiag markdown-aafigure
+RUN pip install linkchecker
 
 RUN which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
 RUN which rsync     || ( apt-get update -y && apt-get install -y rsync)
