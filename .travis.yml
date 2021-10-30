@@ -12,5 +12,5 @@ jobs:
       - docker images
       - docker push wadoon/key-test-docker:jdk8
       - docker push wadoon/key-test-docker:jdk11
-      - docker push wadoon/key-test-docker:jdk16
+      - docker push wadoon/key-test-docker:jdk17
       - docker push wadoon/key-test-docker:docs
