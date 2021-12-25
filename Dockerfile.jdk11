@@ -14,9 +14,14 @@ RUN set -o errexit -o nounset \
 ADD install.sh .
 RUN bash install.sh
 
-RUN java -version && which  java
+ENV PATH="/root/.sdkman/candidates/maven/current/bin:/root/.sdkman/candidates/gradle/current/bin:${PATH}"
+
+RUN java -version && which java
 
 RUN set -o errexit -o nounset \
         && echo "Testing Gradle installation" \
-        && java -version \
-        && $HOME/.sdkman/candidates/gradle/current/bin/gradle --version
+        && gradle --version
+
+RUN set -o errexit -o nounset \
+        && echo "Testing maven installation" \
+        && mvn -version
