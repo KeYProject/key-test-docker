@@ -5,12 +5,12 @@ jobs:
     - stage: build docker image
       script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker build -t wadoon/key-test-docker:jdk8 -f Dockerfile.jdk8 .
+#      - docker build -t wadoon/key-test-docker:jdk8 -f Dockerfile.jdk8 .
       - docker build -t wadoon/key-test-docker:jdk11 -f Dockerfile.jdk11 .
       - docker build -t wadoon/key-test-docker:jdk17 -f Dockerfile.jdk17 .
       - docker build -t wadoon/key-test-docker:docs -f Dockerfile.docs .
       - docker images
-      - docker push wadoon/key-test-docker:jdk8
+#      - docker push wadoon/key-test-docker:jdk8
       - docker push wadoon/key-test-docker:jdk11
       - docker push wadoon/key-test-docker:jdk17
       - docker push wadoon/key-test-docker:docs
