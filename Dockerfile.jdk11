@@ -1,7 +1,8 @@
 FROM openjdk:11
 
+USER root
+
 ENV JAVA_HOME=/usr/local/openjdk-11/
-ENV PATH="${PATH}:~/.sdkman/candidates/ant/current/bin/:~/.sdkman/candidates/gradle/current/bin/"
 
 ADD mathsat  princess princess-all.jar vampire  yices  yices-sat  yices-smt  yices-smt2  z3 cvc4 showSMTVersions /usr/bin/
 
@@ -16,8 +17,6 @@ RUN bash install.sh
 
 ENV PATH="/root/.sdkman/candidates/maven/current/bin:/root/.sdkman/candidates/gradle/current/bin:${PATH}"
 
-RUN "chmod -R gw+r /root/"
-
 RUN java -version && which java
 
 RUN set -o errexit -o nounset \
@@ -27,3 +26,5 @@ RUN set -o errexit -o nounset \
 RUN set -o errexit -o nounset \
         && echo "Testing maven installation" \
         && mvn -version
+
+RUN /bin/chmod -R go+rx $HOME
