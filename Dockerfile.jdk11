@@ -16,6 +16,8 @@ RUN bash install.sh
 
 ENV PATH="/root/.sdkman/candidates/maven/current/bin:/root/.sdkman/candidates/gradle/current/bin:${PATH}"
 
+RUN "chmod -R gw+r /root/"
+
 RUN java -version && which java
 
 RUN set -o errexit -o nounset \
