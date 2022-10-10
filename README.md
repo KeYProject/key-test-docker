@@ -108,6 +108,7 @@ warranty information.
 ### mathsat
 ```
 MathSAT5 version 5.6.8 (27814677e16f) (Jun 28 2022 16:54:05, gmp 6.1.2, gcc 6.3.0, 64-bit)
+``` 
 
 ### princess
 
