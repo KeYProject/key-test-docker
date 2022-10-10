@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-cvc4 --version 
+cvc4 --version
+cvc5-Linux --version
 mathsat -version 
 princess --version
 vampire --version

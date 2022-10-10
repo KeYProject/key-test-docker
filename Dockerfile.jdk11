@@ -4,7 +4,7 @@ USER root
 
 ENV JAVA_HOME=/usr/local/openjdk-11/
 
-ADD mathsat  princess princess-all.jar vampire  yices  yices-sat  yices-smt  yices-smt2  z3 cvc4 showSMTVersions /usr/bin/
+ADD mathsat  princess princess-all.jar vampire  yices  yices-sat  yices-smt  yices-smt2  z3 cvc4 cvc5-Linux showSMTVersions /usr/bin/
 
 RUN bash showSMTVersions
 

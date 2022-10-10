@@ -7,6 +7,13 @@ echo '```'
 echo '```'
 
 echo
+echo "### CVC5"
+echo '```'
+./cvc5-Linux --version
+echo '```'
+
+
+echo
 echo "### mathsat"
 echo '```'
 ./mathsat -version 
