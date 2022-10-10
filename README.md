@@ -1,4 +1,5 @@
-# key-test-docker
+# key-test-docker [![Build Status](https://app.travis-ci.com/KeYProject/key-test-docker.svg?branch=master)](https://app.travis-ci.com/KeYProject/key-test-docker)
+
 Repository providing the docker image
 
 ## Versions 
