@@ -1,6 +1,6 @@
 FROM python
 
-RUN pip install mkdocs  mkdocs-material  pymdown-extensions pygments markdown-blockdiag markdown-aafigure mkdocs-bibtex mkdocs-build-plantuml-plugin
+RUN pip install mkdocs  mkdocs-material  pymdown-extensions pygments markdown-blockdiag markdown-aafigure mkdocs-bibtex mkdocs-build-plantuml-plugin pygments-jml-key
 RUN pip install linkchecker
 
 RUN which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
